@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenUno.MainPage">
+
+    <StackLayout>
+
+        <Label Text=" Ingrese datos de la ubicacion "/>
+
+        <Label Text=" Latitud  "/>
+        <Entry x:Name="txtlatitud" Text=" " Keyboard="Numeric" />
+
+        <Label Text=" Longitud  "/>
+        <Entry x:Name="txtidlongitud" Text=" " Keyboard="Numeric"/>
+
+        <Label Text=" Describa Ubicacion "/>
+        <Entry x:Name="txtdu" />
+
+        <Label Text="  Descripcion corta "/>
+        <Entry x:Name="txtdescripcioncorta" />
+
+        <Button x:Name="btnsalvarubicacion" Text="Salvar Ubicacion" Clicked="btnsalvarubicacion_Clicked"/>
+
+        <Button Text="Abrir Ubicacion " x:Name="btnabrir" Clicked="btnabrir_Clicked"/>
+
+        <ListView x:Name="lslatitud">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding idlatitud }" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>
+                            <Label Text="{Binding latitud }" Grid.Row="0" Grid.Column="1" TextColor="Gray"/>
+                            <Label Text="{Binding idlongitud }" Grid.Row="0" Grid.Column="2" TextColor="Red"/>
+                            <Label Text="{Binding du }" Grid.Row="0" Grid.Column="3" TextColor="Orange"/>
+                            <Label Text="{Binding descripcioncorta }" Grid.Row="0" Grid.Column="4" TextColor="Blue"/>
+                        </Grid>
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
